@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rm -rf dist && NODE_ENV=production babel src --out-dir dist",
     "check-coverage": "nyc check-coverage --branches 100  --functions 100 --lines 100",
-    "deploy": "yarn run build && node scripts/bundle && cd bundle && yarn install --prod && node -r dotenv/config ../node_modules/.bin/serverless deploy -vn && cd ../",
+    "deploy": "yarn run build && node scripts/bundle && cd bundle && yarn install --ignore-engines --prod && node -r dotenv/config ../node_modules/.bin/serverless deploy -vn && cd ../",
     "dev": "node -r dotenv/config ./node_modules/.bin/serverless offline",
     "dev-nocache": "nodemon -r dotenv/config ./node_modules/.bin/serverless offline --skipCacheInvalidation",
     "docs": "jsdoc -c jsdoc-config.json",
@@ -38,9 +38,10 @@
     "nyc": "^10.0.0",
     "react": "^15.4.1",
     "serverless": "^1.2.1",
-    "serverless-offline": "^3.4.1"
+    "serverless-offline": "^3.5.4"
   },
   "dependencies": {
+    "dataloader": "^1.2.0",
     "dotenv": "^2.0.0",
     "graphql": "^0.8.2"
   },

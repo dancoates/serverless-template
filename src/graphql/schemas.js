@@ -5,6 +5,6 @@ export {default as demo} from './demo/DemoSchema.graphql';
 // Root query schema
 export default `
     type Query {
-        demo: Demo,
+        demo(id: ID!): Demo,
     }
 `;

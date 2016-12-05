@@ -86,9 +86,15 @@ const moveFiles = (files) => {
     return new Promise((resolve, reject) => {
         files.reduce((promiseChain, file) => {
             return promiseChain.then(() => new Promise((resolve, reject) => {
-                fse.copy(file, path.join('bundle', file), (err) => {
+                fs.stat(file, (err, stats) => {
                     if(err) return reject(err);
-                    resolve(file);
+                    if(stats.isDirectory()) return resolve(file);
+
+                    console.log('copying: ' + file);
+                    fse.copy(file, path.join('bundle', file), (err) => {
+                        if(err) return reject(err);
+                        resolve(file);
+                    });
                 });
             }))
         }, Promise.resolve())
@@ -98,6 +104,7 @@ const moveFiles = (files) => {
     });
 };
 
+console.log('Preparing bundle...');
 // Execute things in order
 Promise.resolve()
     .then(emptyBundle)

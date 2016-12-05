@@ -4,7 +4,7 @@ import {locatedError, formatError} from 'graphql/error';
 
 
 
-export const graphqlApi = (event, context, callback) => {
+export const graphqlApi = (httpEvent, lambdaContext, callback) => {
     const baseResponse = {
         statusCode: 200,
         headers: {
@@ -15,7 +15,7 @@ export const graphqlApi = (event, context, callback) => {
     let graphqlRequest = '';
 
     try {
-        graphqlRequest = JSON.parse(event.body);
+        graphqlRequest = JSON.parse(httpEvent.body);
         if(typeof graphqlRequest.query === 'undefined') {
             throw new Error('Not a graphql query');
         }
@@ -32,7 +32,17 @@ export const graphqlApi = (event, context, callback) => {
 
     const {query, variables} = graphqlRequest;
 
-    graphql(Schema, query, Resolver, variables).then((result) => {
+    const context = {
+        headers: httpEvent.headers
+    };
+
+    graphql(
+        Schema,
+        query,
+        Resolver,
+        context,
+        variables || {}
+    ).then((result) => {
         callback(null, Object.assign({}, baseResponse, {
             body: result,
             statusCode: result.errors ? 400 : 200

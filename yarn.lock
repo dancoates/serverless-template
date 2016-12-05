@@ -1555,7 +1555,7 @@ crypto-browserify@1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/crypto-browserify/-/crypto-browserify-1.0.9.tgz#cc5449685dfb85eb11c9828acc7cb87ab5bbfcc0"
 
-crypto@0.0.3:
+crypto@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/crypto/-/crypto-0.0.3.tgz#470a81b86be4c5ee17acc8207a1f5315ae20dbb0"
 
@@ -1589,6 +1589,10 @@ dashdash@^1.12.0:
   resolved "https://registry.yarnpkg.com/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
   dependencies:
     assert-plus "^1.0.0"
+
+dataloader@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/dataloader/-/dataloader-1.2.0.tgz#3f73ea657c492c860c1633348adc55ca9bf2107e"
 
 date-time@^0.1.1:
   version "0.1.1"
@@ -3453,7 +3457,7 @@ lodash.some@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.some/-/lodash.some-4.6.0.tgz#1bb9f314ef6b8baded13b549169b2a945eb68e4d"
 
-lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.8.0:
+lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.8.0:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -4518,20 +4522,20 @@ semver@~5.0.1:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.0.3.tgz#77466de589cd5d3c95f138aa78bc569a3cb5d27a"
 
-serverless-offline@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/serverless-offline/-/serverless-offline-3.4.1.tgz#1b6907da08b40a0cb4c600d989f986e1a1fd4eaa"
+serverless-offline@^3.5.4:
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/serverless-offline/-/serverless-offline-3.5.4.tgz#d58717fd63328a6807b9fff7b0d61a62ae54d3b4"
   dependencies:
     babel-register "^6.18.0"
     boom "^4.2.0"
     coffee-script "^1.11.1"
-    crypto "0.0.3"
+    crypto "^0.0.3"
     hapi "15.2.0"
     hapi-cors-headers "^1.0.0"
     js-string-escape "^1.0.1"
     jsonpath-plus "^0.15.0"
-    lodash "^4.16.4"
-    velocityjs "^0.9.0"
+    lodash "^4.17.2"
+    velocityjs "^0.9.1"
 
 serverless@^1.2.1:
   version "1.2.1"
@@ -5148,7 +5152,7 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-velocityjs@^0.9.0:
+velocityjs@^0.9.1:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/velocityjs/-/velocityjs-0.9.1.tgz#cdab669ae6199c605f5254bad9d1140468def1d2"
 
